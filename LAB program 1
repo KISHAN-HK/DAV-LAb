@@ -1,0 +1,215 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNq/O1It6RTiHr+bHegYlL5",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/KISHAN-HK/DAV-LAb/blob/main/LAB%20program%201\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "CTBUbqYZbK4L"
+      },
+      "outputs": [],
+      "source": [
+        "import pandas as pd\n",
+        "import numpy as np\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a =np.array([10,20,30,40,50])\n"
+      ],
+      "metadata": {
+        "id": "r762BVYLcrbD"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"Array:\",a)\n",
+        "print(\"Mean:\",a.mean())\n",
+        "print(\"Reshaped 2D:\",a.reshape(5,1))\n",
+        "print(\"Slice(index 1 to 3):\",a[:4])\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "TQOHShO-c7VR",
+        "outputId": "e1bff80f-29c8-487b-8519-8989b3abe973"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Array: [10 20 30 40 50]\n",
+            "Mean: 30.0\n",
+            "Reshaped 2D: [[10]\n",
+            " [20]\n",
+            " [30]\n",
+            " [40]\n",
+            " [50]]\n",
+            "Slice(index 1 to 3): [10 20 30 40]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "d={\n",
+        "    \"Name\":[\"Ram\",\"Rohan\",\"Denny\"],\n",
+        "    \"Marks\":[40,78,69],\n",
+        "    \"Branch\":[\"Cse\",\"ISE\",\"AI\"]\n",
+        "}"
+      ],
+      "metadata": {
+        "id": "t0S5VIEPdozo"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "data=pd.DataFrame(d)\n",
+        "print(data)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "k0E4TBwQelsz",
+        "outputId": "88bfdb1c-cf25-499f-85de-e3de0cdc9d37"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "    Name  Marks Branch\n",
+            "0    Ram     40    Cse\n",
+            "1  Rohan     78    ISE\n",
+            "2  Denny     69     AI\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"First 2 Rows\\n\",data.iloc[:2])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Ss_K3nz_eZUs",
+        "outputId": "437e6c16-e5da-4ec5-fa06-2b3f13444a95"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "First 2 Rows\n",
+            "     Name  Marks Branch\n",
+            "0    Ram     40    Cse\n",
+            "1  Rohan     78    ISE\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"Marks Column:\\n\",data[\"Marks\"])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "fY8zFqZwfCXb",
+        "outputId": "da4dd695-8460-418a-8db1-0a9932d7dfe0"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Marks Column:\n",
+            " 0    40\n",
+            "1    78\n",
+            "2    69\n",
+            "Name: Marks, dtype: int64\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"Rows with Marks>70:\\n\",data[data[\"Marks\"]>70])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "5zLA5q5MfPRz",
+        "outputId": "d4d34dd5-4a89-4ed3-a996-1b56d03e5a2b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Rows with Marks>70:\n",
+            "     Name  Marks Branch\n",
+            "1  Rohan     78    ISE\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "B1Bk0Obafh8B"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
